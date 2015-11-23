@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript">
+			// supersecret credentials
+			var accountUsername = "Hekman";
+			var accountPassword = "adalovelace";
+
+			function login(){
+				// haal de gegevens op
+				var username = document.getElementById('username').value;
+				var pass = document.getElementById('password').value;
+
+				if(username == ""){
+					document.getElementById('message').innerHTML = "voer username in";
+				} else {
+					if(pass==""){
+						document.getElementById('message').innerHTML = "voer wachtwoord in";
+					} else {
+						if(username == accountUsername){
+							if(pass == accountPassword){
+								document.getElementById('message').innerHTML = "ingelogd!";
+							} else {
+								document.getElementById('message').innerHTML = "verkeerd ww";
+							}
+						} else {
+							document.getElementById('message').innerHTML = "verkeerd username";
+						} 					
+					}
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<input type="text" id="username" value=""/><br/>
+		<input type="password" id="password" value=""/><br/>
+		<button onclick="login()">Login</button>
+		
+		<p id="message">...</p>
+	
+	</body>
+</html>
